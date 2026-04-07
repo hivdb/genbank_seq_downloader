@@ -1,0 +1,185 @@
+# Base directory for all downloaded and processed files.
+db_path: '.'
+
+# Release label used as a subfolder name (e.g. 2026-02-15).
+date: "2026-02-15"
+
+# Prefix for GenBank viral files on the NCBI FTP server.
+gb_file_prefix: gbvrl
+
+# Subfolders under <db_path> for raw downloads and processed outputs.
+download_folder: downloads
+processed_folder: processed
+
+# Number of parallel processes for downloading and processing files.
+# Uncomment and set a value to override; defaults to all available CPUs.
+num_processes: 3
+
+# SARS-CoV-2 records are always excluded from all outputs.
+# Taxonomy terms used to identify and skip them (case-insensitive match).
+sars2_taxonomy_terms:
+  - Severe acute respiratory syndrome coronavirus 2
+
+# If true, writes extracted sequences to <processed_folder>/<date>/records/<file>.seq.gz.
+write_selected_records: true
+
+# Whether to extract records and write metadata.csv / records/.
+# If false, only all_records.csv is written.
+extract: true
+
+# Query terms are passed via CLI (--query), not set here.
+# If --query is given, only matching records are written to metadata.csv.
+# If --query is omitted, all non-SARS-CoV-2 records are written to metadata.csv.
+# Example: --query HIV-1
+
+# Common-name to taxonomy string mapping.
+# --query matches keys here first; unrecognised terms are used as raw taxonomy text.
+common_name_table:
+  HIV-1:
+    - Human immunodeficiency virus 1
+  HIV-2:
+    - Human immunodeficiency virus 2
+  SIV:
+    - Simian immunodeficiency virus
+  SARS2:
+    - Severe acute respiratory syndrome coronavirus 2
+  SARS:
+    - Severe acute respiratory syndrome-related coronavirus
+  MERS:
+    - Middle East respiratory syndrome-related coronavirus
+  HCoV-229E:
+    - Human coronavirus 229E
+  HCoV-NL63:
+    - Human coronavirus NL63
+  HCoV-OC43:
+    - Human coronavirus OC43
+  HCoV-HKU1:
+    - Human coronavirus HKU1
+  RSV:
+    - Human orthopneumovirus
+    - Human respiratory syncytial virus
+  hMPV:
+    - Human metapneumovirus
+  HPIV-1:
+    - Human respirovirus 1
+  HPIV-2:
+    - Human orthorubulavirus 2
+  HPIV-3:
+    - Human respirovirus 3
+  HPIV-4:
+    - Human orthorubulavirus 4
+  Influenza A:
+    - Influenza A virus
+  Influenza B:
+    - Influenza B virus
+  Influenza C:
+    - Influenza C virus
+  Measles:
+    - Measles morbillivirus
+  Mumps:
+    - Mumps orthorubulavirus
+  Rubella:
+    - Rubella virus
+  Rhinovirus:
+    - Rhinovirus A
+    - Rhinovirus B
+    - Rhinovirus C
+  Enterovirus:
+    - Enterovirus A
+    - Enterovirus B
+    - Enterovirus C
+    - Enterovirus D
+  Poliovirus:
+    - Poliovirus
+  Coxsackievirus:
+    - Coxsackievirus
+  Echovirus:
+    - Echovirus
+  Norovirus:
+    - Norwalk virus
+    - Norovirus
+  Sapovirus:
+    - Sapovirus
+  Rotavirus A:
+    - Rotavirus A
+  Rotavirus B:
+    - Rotavirus B
+  Rotavirus C:
+    - Rotavirus C
+  Astrovirus:
+    - Mamastrovirus
+  Adenovirus:
+    - Human mastadenovirus
+  Bocavirus:
+    - Human bocavirus
+  Parvovirus B19:
+    - Primate erythroparvovirus 1
+  BK virus:
+    - Human polyomavirus 1
+  JC virus:
+    - Human polyomavirus 2
+  Merkel cell polyomavirus:
+    - Human polyomavirus 5
+  HSV-1:
+    - Human alphaherpesvirus 1
+  HSV-2:
+    - Human alphaherpesvirus 2
+  VZV:
+    - Human alphaherpesvirus 3
+  EBV:
+    - Human gammaherpesvirus 4
+  CMV:
+    - Human betaherpesvirus 5
+  HHV-6A:
+    - Human betaherpesvirus 6A
+  HHV-6B:
+    - Human betaherpesvirus 6B
+  HHV-7:
+    - Human betaherpesvirus 7
+  KSHV:
+    - Human gammaherpesvirus 8
+  Hepatitis A:
+    - Hepatovirus A
+  Hepatitis B:
+    - Hepatitis B virus
+  Hepatitis C:
+    - Hepacivirus C
+  Hepatitis D:
+    - Hepatitis delta virus
+  Hepatitis E:
+    - Paslahepevirus balayani
+  Hepatitis G:
+    - Human pegivirus
+  HPV:
+    - Human papillomavirus
+  Dengue:
+    - Dengue virus
+  Zika:
+    - Zika virus
+  Yellow fever:
+    - Yellow fever virus
+  West Nile:
+    - West Nile virus
+  Japanese encephalitis:
+    - Japanese encephalitis virus
+  Chikungunya:
+    - Chikungunya virus
+  Oropouche:
+    - Oropouche orthobunyavirus
+  Crimean-Congo hemorrhagic fever:
+    - Crimean-Congo hemorrhagic fever orthonairovirus
+  Lassa:
+    - Lassa mammarenavirus
+  Ebola:
+    - Zaire ebolavirus
+    - Sudan ebolavirus
+    - Bundibugyo ebolavirus
+    - Taï Forest ebolavirus
+    - Reston ebolavirus
+  Marburg:
+    - Marburg marburgvirus
+  Rabies:
+    - Rabies lyssavirus
+  Mpox:
+    - Mpox virus
+    - Monkeypox virus

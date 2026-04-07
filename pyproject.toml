@@ -1,0 +1,16 @@
+[project]
+name = "genbank_seq_downloaderr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "biopython>=1.86",
+    "cryptography>=46.0.6",
+    "more-itertools>=10.8.0",
+    "mysql-connector-python>=9.6.0",
+    "pymysql>=1.1.2",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+    "tqdm>=4.67.3",
+]
